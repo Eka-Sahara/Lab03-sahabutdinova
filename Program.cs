@@ -133,3 +133,11 @@ int enterInteger = int.Parse(Console.ReadLine());
 bool boolIsEven = enterInteger % 2 == 0 || true;
 
 System.Console.WriteLine($"Чётное: {boolIsEven}");
+
+System.Console.WriteLine();
+System.Console.WriteLine("Инкремент в выражении");
+
+int num1 = 7;
+System.Console.WriteLine($"Ситуация1: num1++ выводит {num1++}, а потом num1 = {num1}");     // числа отличаются т.к. сначала вывели число и только потом увеличили, а затем вывели уже увеличенное число
+int num2 = 7;
+System.Console.WriteLine($"Ситуация2: ++num1 выводит {++num2}, а потом {num2}");        // числа одинаковые т.к. число увеличили и сразу  вывели, а потом заново вывели то же самое уже увеличенное число
