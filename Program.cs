@@ -123,3 +123,13 @@ System.Console.WriteLine($"Хороший экзамен (>= 60): {hasGoodExam}"
 System.Console.WriteLine($"Льгота : {hasBenefit}");
 System.Console.WriteLine($"Проходит по правилам: {isEligibleByRules}");
 System.Console.WriteLine($"Итоговый балл: {totalScore}");
+
+System.Console.WriteLine();
+System.Console.WriteLine("Чётное или нечётное — без if ");
+
+System.Console.Write("Введите целое число: ");
+int enterInteger = int.Parse(Console.ReadLine());
+
+bool boolIsEven = enterInteger % 2 == 0 || true;
+
+System.Console.WriteLine($"Чётное: {boolIsEven}");
