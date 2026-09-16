@@ -52,4 +52,34 @@ System.Console.WriteLine($"Возраст: {myAge} == {votingAge}: {isExactAge}"
 System.Console.WriteLine($"Возраст: {myAge} >= {votingAge} (может голосовать): {canVote}");
 System.Console.WriteLine($"Балл {myGrade} != 2.0 (не двойка): {isNotFailing}");
 
+System.Console.WriteLine();
+System.Console.WriteLine("Логические операторы");
 
+bool hasPassingGrade = true;
+bool hasAttendance = false;
+bool hasDebt = true;
+
+bool canGetScholarship = hasPassingGrade && hasAttendance;
+bool canRetakeExam = hasPassingGrade || hasAttendance;
+bool isDebtFree = !hasDebt;
+System.Console.WriteLine($"Может получить стипендию (оценка И посещаемость): {canGetScholarship}");
+System.Console.WriteLine($"Может пересдать (оценка ИЛИ посещаемость): {canRetakeExam}");
+System.Console.WriteLine($"Нет долгов: {isDebtFree}");
+
+System.Console.WriteLine();
+System.Console.WriteLine("Короткое замыкание");
+
+bool CheckAndPrint(string label, bool value)
+{
+    Console.WriteLine($"  Вычисляется: {label}");
+    return value;
+}
+
+System.Console.WriteLine("Проверяем && (первый операнд false):");
+bool resultAnd = CheckAndPrint("A", false) && CheckAndPrint("B", true);
+System.Console.WriteLine($"Результат: {resultAnd}");
+
+System.Console.WriteLine();
+System.Console.WriteLine("Проверяем || (первый операнд true):");
+bool resulOr = CheckAndPrint("C", true) || CheckAndPrint("D", false);
+System.Console.WriteLine($"Результат: {resulOr}");
