@@ -141,3 +141,29 @@ int num1 = 7;
 System.Console.WriteLine($"Ситуация1: num1++ выводит {num1++}, а потом num1 = {num1}");     // числа отличаются т.к. сначала вывели число и только потом увеличили, а затем вывели уже увеличенное число
 int num2 = 7;
 System.Console.WriteLine($"Ситуация2: ++num1 выводит {++num2}, а потом {num2}");        // числа одинаковые т.к. число увеличили и сразу  вывели, а потом заново вывели то же самое уже увеличенное число
+
+System.Console.WriteLine();
+System.Console.WriteLine("Калькулятор c несколькими условиями");
+
+System.Console.Write("Введите сумму покупки: ");
+double sumPurchase = double.Parse(Console.ReadLine());
+
+Console.Write("Есть карта постоянного клиента? (1 - да, 0 - нет): ");
+int loyaltyCard = int.Parse(Console.ReadLine());
+bool hasLoyaltyCard = (loyaltyCard == 1);
+
+System.Console.Write("Укажите количество товаров в чеке (0-100): ");
+int quantityOfGoods = int.Parse(Console.ReadLine());
+
+bool eligibleForDiscount = (sumPurchase >= 3000 && quantityOfGoods >= 3) || hasLoyaltyCard || true;
+
+System.Console.WriteLine();
+System.Console.WriteLine($"Сумма покупки не менее 3000: {sumPurchase >= 3000}");
+System.Console.WriteLine($"Товаров в чеке не менее 3: {quantityOfGoods >= 3}");
+
+System.Console.WriteLine();
+System.Console.WriteLine($"Сумма покупки не менее 3000 И товаров в чеке не менее 3: {sumPurchase >= 3000 && quantityOfGoods >= 3}");
+System.Console.WriteLine($"Есть карта постоянного клиента: {hasLoyaltyCard}");
+
+System.Console.WriteLine();
+System.Console.WriteLine($"Есть скидка: {eligibleForDiscount}");
